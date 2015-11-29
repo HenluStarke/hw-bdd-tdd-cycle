@@ -25,6 +25,8 @@ module NavigationHelpers
       edit_movie_path Movie.find_by(title: "#{$1}")
     when /^the details page for "(.*)"/
       movie_path Movie.find_by(title: "#{$1}")
+    when /^the Similar Movies page for "(.*)"$/
+      search_by_movie_director_movie_path(Movie.where(title: $1).first.id)
 
     else
       begin
