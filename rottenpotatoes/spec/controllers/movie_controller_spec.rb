@@ -13,7 +13,7 @@ describe MoviesController do
      get :search_by_movie_director, :id => 1
      assigns(:movies).should == @fake_results
     end
-    it 'should redirect the user to the home page and alert' do
+    it 'should redirect the user to the home page and alert when the movie has no director' do
      @fake_movie = double('Movie', :id => 1, :director => nil, title: 'Fake movie')
      Movie.stub(:search_by_movie_director).and_return(nil)
      Movie.stub(:find).and_return(@fake_movie)
