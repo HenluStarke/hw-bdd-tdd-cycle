@@ -3,6 +3,7 @@ class Movie < ActiveRecord::Base
     %w(G PG PG-13 NC-17 R)
   end
   def self.search_by_movie_director(director)
+    return nil if director == ""
     movies = Movie.where(director: director)
   end
 end

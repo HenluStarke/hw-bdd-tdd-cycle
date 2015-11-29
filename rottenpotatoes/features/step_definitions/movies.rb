@@ -12,5 +12,5 @@ Given /the following movies exist/ do |movies_table|
 end
 
 Then /^the director of "(.*)" should be "(.*)"/ do |title, director|
-  expect(Movie.select('title').where(director: director).first.title).to eq(title)
+  expect(Movie.select('title', 'director').where(title: title).first.director).to eq(director)
 end
