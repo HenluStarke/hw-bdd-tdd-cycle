@@ -6,6 +6,7 @@ Given /the following movies exist/ do |movies_table|
     current_movie.title = movie[:title]
     current_movie.rating = movie[:rating]
     current_movie.release_date = movie[:release_date]
+    current_movie.director = movie[:director]
     current_movie.save!
   end
 end
